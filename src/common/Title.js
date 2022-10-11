@@ -93,7 +93,7 @@ const Title = () => {
       
         <Typography variant="h6" noWrap component="div">
         {location.pathname == "/offer" ?
-       <>Offers</> 
+       <>Offersdvfd</> 
         :
         <>Paxful Trades</>
 }

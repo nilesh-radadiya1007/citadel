@@ -102,13 +102,15 @@ function Header() {
   return (
     <>
       <AppBar
-         position="fixed"
-         color='info'
-         sx={{
-           width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px`,
-           // padding: 1px
-           px: 1,
-           py: 0
+        position="fixed"
+        color='info'
+
+        sx={{
+          width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px`,
+          // padding: 1px
+          px: 1,
+          py: 0,
+        
         }}
       >
         <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }} disableGutters>

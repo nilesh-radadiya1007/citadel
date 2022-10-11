@@ -19,6 +19,7 @@ const Sidebar = () => {
                 sx={{
                     width: drawerWidth,
                     flexShrink: 0,
+                    backgroundColor: '#37474f',
                     '& .MuiDrawer-paper': {
                         width: drawerWidth,
                         boxSizing: 'border-box',
