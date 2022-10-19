@@ -7,12 +7,13 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Menu, MenuItem, Divider, Box, Stack, Tooltip, Switch, IconButton, Modal, TextField, Autocomplete, Button, Checkbox, FormControlLabel, FormGroup, FormControl, Input, InputLabel, AppBar, Tabs, Tab, Grid } from '@mui/material';
 import { Cancel, FilterAlt, PersonAdd, RemoveRedEye, Replay, Settings, TextSnippetOutlined, ViewStreamOutlined } from '@mui/icons-material';
-import SearchBar from "material-ui-search-bar";
 import FolderOpenTwoToneIcon from '@mui/icons-material/FolderOpenTwoTone';
 import ContentCopyTwoToneIcon from '@mui/icons-material/ContentCopyTwoTone';
 import ImageTwoToneIcon from '@mui/icons-material/ImageTwoTone';
 import { useTheme } from '@mui/material/styles';
 import Modals from './Modals';
+import TheLayout from '../../common/TheLayout';
+import SearchIcon from '@mui/icons-material/Search';
 
 const style = {
     position: 'absolute',
@@ -346,7 +347,7 @@ const rows = [
     createData('Frozen', 159, 6.0, 24, 4.0, 3.99, 5, 'gtrf', 'gef', 5, 5, 'visa gift card', '$121', 'achive', '', '10.05', 'visa gift card', '', 'jhosa'),
 ];
 
-export default function Trades() {
+function Trades() {
     const [filteropen, setFilterOpen] = React.useState(false);
     const [search, setsearch] = React.useState("");
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -384,6 +385,8 @@ export default function Trades() {
     // search menu over
     return (
         <>
+            <TheLayout />
+
             <AppBar
                 position="fixed"
                 color='info'
@@ -415,20 +418,20 @@ export default function Trades() {
                 </AppBar>
             </AppBar>
 
-            <div style={{ padding: "185px 10px 0px 10px" }} >
+            <div style={{ padding: "185px 10px 0px 10px", marginLeft: '230px' }} >
                 <TabPanel value={value} index={0} dir={theme.direction}>
                     <TableContainer component={Paper}>
                         <Stack direction={{ xs: 'row', md: 'row' }} sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
-                            <SearchBar
-                                // ref={input}
-                                elvation={0}
-                                onChange={handleChange}
-                                onRequestSearch={handleClick}
-                                style={{
-                                    borderBottom: '1px solid #bdbdbd',
-                                    width: '51%'
+                            <Box
+                                sx={{
+                                    borderColor: '#fff',
+                                    width: '50%',
+                                    position: 'relative'
                                 }}
-                            />
+                            >
+                                <SearchIcon sx={{ position: 'absolute', top: '14px', right: '19px', color: 'gray' }} />
+                                <TextField fullWidth id="fullWidth" placeholder='Search...' />
+                            </Box>
                             <Box letterSpacing={2}>
                                 <Tooltip title="Trade Trade grouping">
                                     <IconButton>
@@ -742,22 +745,19 @@ export default function Trades() {
                 </TabPanel>
 
 
-                <TabPanel value={value} index={1} dir={theme.direction}>
+                <TabPanel value={value} index={1} dir={theme.direction} style={{ marginleft: '230px' }}>
                     <TableContainer component={Paper}>
                         <Stack direction={{ xs: 'row', md: 'row' }} sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
-                            <SearchBar
-                                // ref={input}
-                                elvation={0}
-                                onChange={handleChange}
-                                onRequestSearch={handleClick}
-                                style={{
-                                    // fullwidth,
-                                    // margin: "0 auto",
-                                    // maxWidth: 800,
-                                    borderBottom: '1px solid #bdbdbd',
-                                    width: '51%'
+                            <Box
+                                sx={{
+                                    borderColor: '#fff',
+                                    width: '50%',
+                                    position: 'relative'
                                 }}
-                            />
+                            >
+                                <SearchIcon sx={{ position: 'absolute', top: '14px', right: '19px', color: 'gray' }} />
+                                <TextField fullWidth id="fullWidth" placeholder='Search...' />
+                            </Box>
                             <Box letterSpacing={2}>
                                 <Tooltip title="Reload">
                                     <IconButton>
@@ -1077,3 +1077,5 @@ export default function Trades() {
         </>
     );
 }
+
+export default Trades;

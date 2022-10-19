@@ -1,10 +1,10 @@
 import React, { useState, forwardRef } from 'react';
-import { List, ListItem, Collapse, Button, Drawer, Typography } from '@material-ui/core';
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import clsx from 'clsx';
 import menuItems from './SideBarItems';
-import { ExpandLess, ExpandMore, ImportExport } from "@material-ui/icons";
 import { NavLink as RouterLink } from 'react-router-dom';
+import { Button, Collapse, List, ListItem } from '@mui/material';
+import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import useStyles from './menuBarStyles';
 
 
@@ -57,12 +57,12 @@ const MenuBar = (props) => {
 
               >
                 {/* <ImportExport/> */}
-                <div className='linkimg-wrap'>
-                  <img src={path} />
+                <div style={{ display: 'flex' }}>
+                  <div className='linkimg-wrap'>
+                    <img src={path} />
+                  </div>
+                  <h5 style={{ display: "block", fontSize: 12, margin: 0, textAlign: "left", color: "white" }} >{name}</h5>
                 </div>
-
-                {name}
-
 
 
               </Button>
@@ -87,10 +87,10 @@ const MenuBar = (props) => {
 
 
               <div >
-                <h5 style={{ display: "block", fontSize: 14, margin: 0, textAlign: "left" }} >{name}</h5>
-                <p style={{ display: "block", fontSize: 11, margin: 0, color: "#cfd8dc", textAlign: "left" }} >{name2}</p>
+                <h5 style={{ display: "block", fontSize: 14, margin: 0, textAlign: "left", color: "white" }} >{name}</h5>
+                <p style={{ display: "block", fontSize: 11, margin: 0,  textAlign: "left", color: "white" }} >{name2}</p>
               </div>
-              {menu[name] ? <ExpandLess style={{ color: '#29b6f6' }} /> : <ExpandMore />}
+              {menu[name] ? <ExpandLess style={{ color: '#FFF' }} /> : <ExpandMore style={{ color: '#FFF' }} />}
             </Button>
           </ListItem>
           <Collapse

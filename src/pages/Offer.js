@@ -1,18 +1,16 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import Collapse from '@mui/material/Collapse';
-import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
+import { AppBar, Autocomplete, Box, Button, Checkbox, Collapse, Divider, FormControl, FormControlLabel, FormGroup, IconButton, Input, InputLabel, Modal, Paper, Stack, Table, TableBody, TableCell, TableContainer, TableHead, TablePagination, TableRow, TextField, Tooltip, Typography } from '@mui/material';
+import { FilterAlt, RemoveRedEye, Replay, TextSnippetOutlined, ViewStreamOutlined } from '@mui/icons-material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Menu, MenuItem, Divider, Box, Stack, Tooltip, IconButton, Modal, TextField, Autocomplete, Button, Checkbox, FormControlLabel, FormGroup, FormControl, Input, InputLabel, TablePagination, AppBar } from '@mui/material';
-import { Cancel, CheckBox, FilterAlt, RemoveRedEye, Replay, Settings, TextSnippetOutlined, ViewStreamOutlined } from '@mui/icons-material';
-import SearchBar from "material-ui-search-bar";
+import KeyboardControlKeyIcon from '@mui/icons-material/KeyboardControlKey';
+import CheckIcon from '@mui/icons-material/Check';
 import CreateIcon from '@mui/icons-material/Create';
 import DisabledByDefaultIcon from '@mui/icons-material/DisabledByDefault';
-import CheckIcon from '@mui/icons-material/Check';
-import PermMediaTwoToneIcon from '@mui/icons-material/PermMediaTwoTone';
-import LibraryAddTwoToneIcon from '@mui/icons-material/LibraryAddTwoTone';
+import LibraryAddIcon from '@mui/icons-material/LibraryAdd';
+import CollectionsIcon from '@mui/icons-material/Collections';
+import TheLayout from '../common/TheLayout';
+import SearchIcon from '@mui/icons-material/Search';
 
 const style = {
     position: 'absolute',
@@ -88,7 +86,7 @@ function Row(props) {
                         size="small"
                         onClick={() => setOpen(!open)}
                     >
-                        {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+                        {open ? <KeyboardControlKeyIcon /> : <KeyboardArrowDownIcon />}
                     </IconButton>
                 </TableCell>
                 <TableCell
@@ -177,6 +175,7 @@ export default function Offer() {
     };
     return (
         <>
+            <TheLayout />
             <AppBar
                 position="fixed"
                 color='info'
@@ -194,27 +193,29 @@ export default function Offer() {
                 </Typography>
             </AppBar>
 
-            <div style={{ padding: "145px 10px 0px 10px" }} >
+            <div style={{ padding: "145px 37px 0px", marginLeft: '235px' }} >
 
                 <TableContainer component={Paper}>
                     <Stack direction={{ xs: 'row', md: 'row' }} sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
-                        <SearchBar
-                            // ref={input}
-                            onChange={handleChange}
-                            onRequestSearch={handleClick}
-                            style={{
-                                width: '51%'
+                        <Box
+                            sx={{
+                                borderColor: '#fff',
+                                width: '50%',
+                                position: 'relative'
                             }}
-                        />
+                        >
+                            <SearchIcon sx={{ position: 'absolute', top: '14px', right: '19px', color: 'gray' }} />
+                            <TextField fullWidth id="fullWidth" placeholder='Search...' />
+                        </Box>
                         <Box letterSpacing={2}>
                             <Tooltip title="">
                                 <IconButton sx={{ color: 'green' }}>
-                                    <LibraryAddTwoToneIcon />
+                                    <LibraryAddIcon />
                                 </IconButton>
                             </Tooltip>
                             <Tooltip title="">
                                 <IconButton sx={{ color: 'red' }}>
-                                    <PermMediaTwoToneIcon />
+                                    <CollectionsIcon />
                                 </IconButton>
                             </Tooltip>
                             <Tooltip title="Trade Trade grouping">
@@ -250,7 +251,6 @@ export default function Offer() {
                                     </Typography>
                                     <Box style={{ height: "450px", overflow: "hidden", overflowY: "auto", }} sx={{ p: 2 }}>
                                         <Autocomplete
-                                            // {...defaultProps}
                                             id="disable-close-on-select"
                                             disableCloseOnSelect
                                             renderInput={(params) => (
@@ -259,7 +259,6 @@ export default function Offer() {
                                             sx={{ mb: 1 }}
                                         />
                                         <Autocomplete
-                                            // {...defaultProps}
                                             id="disable-close-on-select"
                                             disableCloseOnSelect
                                             renderInput={(params) => (
@@ -268,7 +267,6 @@ export default function Offer() {
                                             sx={{ mb: 1 }}
                                         />
                                         <Autocomplete
-                                            // {...defaultProps}
                                             id="disable-close-on-select"
                                             disableCloseOnSelect
                                             renderInput={(params) => (
@@ -309,7 +307,6 @@ export default function Offer() {
                                             <Input id="standard-adornment-amount" />
                                         </FormControl>
                                         <Autocomplete
-                                            // {...defaultProps}
                                             id="disable-close-on-select"
                                             disableCloseOnSelect
                                             renderInput={(params) => (
@@ -323,7 +320,6 @@ export default function Offer() {
                                             <FormControlLabel control={<Checkbox color='info' size='small' />} label="Hash Chargeback" />
                                         </FormGroup>
                                         <Autocomplete
-                                            // {...defaultProps}
                                             id="disable-close-on-select"
                                             disableCloseOnSelect
                                             renderInput={(params) => (

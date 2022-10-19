@@ -1,27 +1,18 @@
+import { Box, Button, Container, createTheme, CssBaseline, Grid, Paper, TextField, ThemeProvider, Typography } from '@mui/material';
 import * as React from 'react';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import TextField from '@mui/material/TextField';
-import Paper from '@mui/material/Paper';
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const theme = createTheme();
 
 export default function Login() {
 
-    let history = useHistory();
-
+    let navigate = useNavigate();
     const loginBtn = () => {
-        history.push('/trades');
+        navigate('/trades');
     }
 
     const signupBtn = () => {
-        history.push('/trades');
+        navigate('/trades');
     }
     return (
         <ThemeProvider theme={theme}>
@@ -31,7 +22,6 @@ export default function Login() {
                     {/* End hero unit */}
                     <Box sx={{ my: 6, fontSize: 35 }}>Citadel</Box>
                     <Grid container my={1}>
-                        {/* {cards.map((card) => ( */}
                         <Grid item xs={12} px={4} sm={8} md={5} mr={6} component={Paper} sx={{ height: 330 }} elevation={1} square>
                             <Box
                                 sx={{
@@ -104,8 +94,6 @@ export default function Login() {
                                         fullWidth
                                         hiddenLabel
                                         placeholder="Email"
-                                        // id="filled-hidden-label-small"
-                                        // variant="filled"
                                         id="standard-basic"
                                         variant="standard"
                                         size="small"

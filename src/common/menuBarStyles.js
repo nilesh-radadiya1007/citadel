@@ -1,5 +1,4 @@
-import { makeStyles } from '@material-ui/styles';
-import { colors } from '@material-ui/core';
+import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -10,7 +9,6 @@ const useStyles = makeStyles(theme => ({
     width: "250px",
   },
   item: {
-    // color: "blue",
     display: 'flex',
     justifyContent: "space-between",
     paddingTop: 0,
@@ -18,7 +16,6 @@ const useStyles = makeStyles(theme => ({
     
   },
   button: {
-    color: colors.grey[50],
     padding: '10px 8px',
     display: "flex",
     justifyContent: 'space-between',
@@ -28,14 +25,12 @@ const useStyles = makeStyles(theme => ({
   
   },
   btnRoot: {
-    // paddingLeft: "25px",
-    // padding: "10px",
-    // backgroundColor: "green"
-    // justifyContent: "left !important"
+    paddingLeft: "25px",
+    padding: "10px",
+    justifyContent: "space-between !important"
     
   },
   subMenu: {
-    // paddingLeft: "50px !important",
     padding: "10px",
     display: "flex",
     justifyContent: "flex-start"

@@ -1,8 +1,7 @@
-import { AddSharp, ArrowDownward, AssistantPhoto, AttachFile, ChatBubbleSharp, PriorityHigh, StarBorderOutlined, UnfoldLessOutlined, SettingsSuggest } from '@mui/icons-material';
+import { AddSharp, ArrowDownward, AssistantPhoto, AttachFile, ChatBubbleSharp, PriorityHigh, SettingsSuggest, UnfoldLessOutlined } from '@mui/icons-material';
 import { Autocomplete, Backdrop, Box, Button, Card, CardActions, CardContent, CardMedia, Checkbox, Divider, Fade, FormControl, FormControlLabel, FormGroup, Grid, IconButton, InputLabel, Modal, Paper, Stack, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextareaAutosize, TextField, Typography, List, ListDivider, ListItem, ListItemContent, ListItemButton } from '@mui/material';
 import React, { useState } from 'react'
-import Viewer from "react-viewer";
-import "react-awesome-lightbox/build/style.css";
+import Viewer from 'react-viewer';
 
 const style = {
     position: 'absolute',
@@ -192,16 +191,13 @@ const Modals = () => {
                         </div>
 
                         <CardContent style={{ my: 3 }}>
-                            {/* <StarBorderOutlined /> */}
                             <Autocomplete
                                 disablePortal
                                 id="auto-complete"
                                 autoComplete
                                 options={top100Films}
                                 renderInput={(params) => <TextField {...params} label="Favorite Message" />}
-                            // renderInput={(params) => (
-                            //   <TextField {...params} label="autoComplete" variant="standard" />
-                            // )}
+                            
                             />
                         </CardContent>
                         <CardContent>
@@ -285,7 +281,6 @@ const Modals = () => {
                             <FormGroup row sx={{ px: 1 }} >
                                 <FormControlLabel control={<Checkbox />} sx={{ '& .MuiSvgIcon-root': { fontSize: 22 }, '& .MuiFormControlLabel-label': { fontSize: 15 } }} label="Has Alam" />
                                 <FormControlLabel control={<Checkbox />} sx={{ '& .MuiSvgIcon-root': { fontSize: 22 }, '& .MuiFormControlLabel-label': { fontSize: 15 } }} label="Unassigned Or Mine" />
-                                {/* <Typography sx={{ display: 'flex', alignItems: 'center', mx: 2 }}>RELEASE WITH OPTION</Typography> */}
                                 <Button variant="contained" color="inherit" size="small" disabled sx={{ me: 4 }} >
                                     RELEASE WITH OPTION<SettingsSuggest />
                                 </Button>
@@ -330,9 +325,7 @@ const Modals = () => {
                                         key={row.name}
                                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                     >
-                                        {/* <TableCell component="th" scope="row">
-                    {row.name}
-                  </TableCell> */}
+                                        
                                         <TableCell>{row.card}</TableCell>
                                         <TableCell>{row.Date}</TableCell>
                                         <TableCell>{row.CCV}</TableCell>
